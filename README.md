@@ -249,3 +249,279 @@ SistemPencatatanBukuPerpustakaan/
 ├── phpunit.xml
 ├── tailwind.config.js
 └── vite.config.js
+
+🗂️ Struktur Modul
+Modul Buku
+resources/views/books/
+├── create.blade.php
+├── edit.blade.php
+├── index.blade.php
+└── pdf.blade.php
+
+Modul ini digunakan untuk mengelola data buku dan menampilkan data buku.
+
+Modul Peminjaman
+resources/views/borrowings/
+├── create.blade.php
+├── index.blade.php
+└── scanner.blade.php
+
+Modul ini digunakan untuk proses pencatatan dan pengelolaan peminjaman buku.
+
+Modul Autentikasi
+resources/views/auth/
+├── login.blade.php
+├── register.blade.php
+├── forgot-password.blade.php
+├── reset-password.blade.php
+├── confirm-password.blade.php
+└── verify-email.blade.php
+
+Modul ini digunakan untuk proses autentikasi pengguna.
+
+🗄️ Database
+
+Project menggunakan database untuk menyimpan data aplikasi.
+
+Beberapa migration yang terdapat dalam project antara lain:
+
+database/migrations/
+
+0001_01_01_000000_create_users_table.php
+0001_01_01_000001_create_cache_table.php
+0001_01_01_000002_create_jobs_table.php
+
+2025_12_17_081354_create_books_table.php
+2025_12_17_083753_create_personal_access_tokens_table.php
+2025_12_17_085335_add_role_to_users_table.php
+2025_12_17_092554_create_borrowings_table.php
+2025_12_19_132914_add_uuid_to_books_table.php
+
+Model utama yang digunakan:
+
+app/Models/
+├── Book.php
+├── Borrowing.php
+└── User.php
+🔄 Alur Sistem
+
+Secara umum alur penggunaan sistem adalah:
+
+User
+  │
+  ▼
+Login / Register
+  │
+  ▼
+Dashboard
+  │
+  ├───────────────┐
+  ▼               ▼
+Data Buku      Peminjaman
+  │               │
+  ▼               ▼
+Tambah/Edit     Catat Peminjaman
+Data Buku          │
+  │                ▼
+  ▼             Data Peminjaman
+Database            │
+  │                ▼
+  └──────────────► Database
+💻 Instalasi Project
+1. Clone Repository
+
+Clone repository menggunakan Git:
+
+git clone https://github.com/defrisdoloksaribu/sistem-pencatatan-buku-perpustakaan.git
+
+Masuk ke folder project:
+
+cd sistem-pencatatan-buku-perpustakaan
+2. Install Dependency Laravel
+
+Jalankan:
+
+composer install
+3. Install Dependency Frontend
+
+Jalankan:
+
+npm install
+4. Membuat File Environment
+
+Buat file .env berdasarkan file konfigurasi environment Laravel.
+
+Jika file .env.example tersedia:
+
+copy .env.example .env
+
+Pada Linux / macOS:
+
+cp .env.example .env
+5. Generate Application Key
+
+Jalankan:
+
+php artisan key:generate
+6. Konfigurasi Database
+
+Buka file:
+
+.env
+
+Kemudian sesuaikan konfigurasi database.
+
+Contoh:
+
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=perpustakaan
+DB_USERNAME=root
+DB_PASSWORD=
+
+Nama database dapat disesuaikan dengan database yang digunakan pada komputer masing-masing.
+
+7. Menjalankan Migration
+
+Jalankan:
+
+php artisan migrate
+
+Jika ingin menjalankan migration sekaligus seeder:
+
+php artisan migrate --seed
+8. Menjalankan Aplikasi
+
+Jalankan server Laravel:
+
+php artisan serve
+
+Kemudian buka:
+
+http://127.0.0.1:8000
+🎨 Menjalankan Frontend
+
+Untuk menjalankan Vite dalam mode development:
+
+npm run dev
+
+Jika ingin membuat asset untuk production:
+
+npm run build
+🧪 Testing
+
+Project menggunakan PHPUnit untuk melakukan pengujian aplikasi.
+
+Untuk menjalankan seluruh test:
+
+php artisan test
+
+atau:
+
+./vendor/bin/phpunit
+📁 File Penting
+
+Beberapa file penting dalam project:
+
+Model
+app/Models/Book.php
+app/Models/Borrowing.php
+app/Models/User.php
+Controller
+
+Controller aplikasi berada di:
+
+app/Http/Controllers/
+Routes
+
+Route utama:
+
+routes/web.php
+
+Route API:
+
+routes/api.php
+
+Route autentikasi:
+
+routes/auth.php
+Views
+
+Tampilan aplikasi berada di:
+
+resources/views/
+🔒 Keamanan
+
+File konfigurasi environment seperti .env tidak disimpan di repository.
+
+Beberapa file dan folder yang tidak perlu diunggah ke GitHub juga telah dimasukkan ke dalam .gitignore, seperti:
+
+.env
+/node_modules
+/vendor
+/public/build
+/storage/*.key
+
+Hal ini dilakukan agar file konfigurasi pribadi, dependency lokal, dan file hasil proses aplikasi tidak ikut masuk ke repository.
+
+📌 Status Project
+
+Status: Completed / Academic Project
+
+Project ini dibuat sebagai project pembelajaran dan pengembangan aplikasi web.
+
+Repository digunakan sebagai dokumentasi source code dan perkembangan project.
+
+👨‍💻 Developer
+
+Defris Doloksaribu
+
+Mahasiswa Teknologi Komputer
+Institut Teknologi Del
+
+GitHub:
+
+https://github.com/defrisdoloksaribu
+📚 Pembelajaran yang Diperoleh
+
+Melalui project ini, beberapa konsep yang dipelajari antara lain:
+
+Pengembangan aplikasi web menggunakan Laravel
+Konsep MVC
+Routing
+Controller
+Model
+Migration
+Database
+CRUD
+Blade Template
+Authentication
+Authorization / Role
+Form validation
+Email notification
+PDF generation
+Frontend asset management
+Git dan GitHub
+Struktur project Laravel
+Testing aplikasi
+🚀 Pengembangan Selanjutnya
+
+Project ini masih dapat dikembangkan dengan beberapa fitur tambahan, seperti:
+
+Dashboard dengan statistik perpustakaan
+Riwayat peminjaman yang lebih lengkap
+Sistem pengembalian buku
+Pencarian dan filter buku yang lebih detail
+Laporan peminjaman berdasarkan periode
+Pengembangan sistem notifikasi
+Peningkatan tampilan antarmuka
+Deployment aplikasi ke server
+Integrasi sistem dengan layanan cloud
+📸 Dokumentasi
+
+Dokumentasi berupa screenshot aplikasi, diagram sistem, dan laporan project dapat ditambahkan ke repository untuk memberikan gambaran lebih jelas mengenai sistem yang dikembangkan.
+
+📄 License
+
+Project ini dibuat untuk keperluan pembelajaran dan pengembangan project akademik.
