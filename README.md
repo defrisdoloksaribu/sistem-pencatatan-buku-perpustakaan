@@ -57,3 +57,195 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+
+# 📚 Sistem Pencatatan Buku Perpustakaan
+
+## 📖 Tentang Project
+
+**Sistem Pencatatan Buku Perpustakaan** adalah aplikasi berbasis web yang dibuat untuk membantu proses pengelolaan data buku dan peminjaman buku di perpustakaan.
+
+Project ini dikembangkan sebagai salah satu project pembelajaran dalam pengembangan aplikasi web menggunakan **Laravel**.
+
+Sistem menyediakan beberapa fungsi utama seperti pengelolaan data buku, pencatatan peminjaman, autentikasi pengguna, pengelolaan profil, serta beberapa fitur pendukung untuk membantu proses administrasi perpustakaan.
+
+---
+
+## 🎯 Tujuan Project
+
+Project ini dibuat dengan beberapa tujuan:
+
+- Membuat sistem pencatatan buku berbasis web.
+- Mempermudah pengelolaan data buku.
+- Membantu proses pencatatan peminjaman buku.
+- Mengurangi proses pencatatan secara manual.
+- Menerapkan konsep CRUD dalam aplikasi web.
+- Menerapkan autentikasi dan manajemen pengguna.
+- Menerapkan database pada aplikasi berbasis Laravel.
+- Mempelajari pengembangan aplikasi web menggunakan framework Laravel.
+
+---
+
+## ✨ Fitur Utama
+
+### 🔐 1. Autentikasi Pengguna
+
+Sistem menyediakan fitur autentikasi pengguna yang terdiri dari:
+
+- Login
+- Register
+- Logout
+- Verifikasi email
+- Lupa password
+- Reset password
+- Konfirmasi password
+- Pengubahan password
+- Pengelolaan informasi profil
+
+---
+
+### 📚 2. Pengelolaan Data Buku
+
+Sistem menyediakan fitur untuk mengelola data buku.
+
+Fitur yang tersedia meliputi:
+
+- Menampilkan daftar buku
+- Menambahkan data buku
+- Mengubah data buku
+- Menghapus data buku
+- Melihat informasi buku
+- Pencarian data buku
+- Pengelolaan stok buku
+- Pembuatan tampilan data buku dalam bentuk PDF
+
+Data buku yang digunakan dalam sistem mencakup informasi seperti:
+
+- Kode buku
+- Judul
+- Penulis
+- Penerbit
+- Tahun
+- Kategori
+- Stok
+
+---
+
+### 📖 3. Pencatatan Peminjaman Buku
+
+Sistem juga menyediakan fitur untuk melakukan pencatatan peminjaman buku.
+
+Fitur peminjaman meliputi:
+
+- Menampilkan data peminjaman
+- Menambahkan data peminjaman
+- Mencatat informasi peminjam
+- Mencatat buku yang dipinjam
+- Mengelola data peminjaman
+- Menampilkan informasi status peminjaman
+
+---
+
+### 📷 4. Scanner
+
+Project menyediakan halaman scanner yang digunakan sebagai bagian dari proses pencatatan peminjaman.
+
+Fitur ini terdapat pada bagian:
+
+`resources/views/borrowings/scanner.blade.php`
+
+---
+
+### 📧 5. Notifikasi Peminjaman
+
+Sistem memiliki fitur notifikasi melalui email yang digunakan untuk memberikan informasi terkait proses peminjaman.
+
+Implementasi email terdapat pada:
+
+`app/Mail/NotifikasiBorrowing.php`
+
+dan tampilan email terdapat pada:
+
+`resources/views/emails/notifikasi_borrowing.blade.php`
+
+---
+
+### 👤 6. Manajemen Profil
+
+Pengguna dapat mengelola informasi akun melalui halaman profil.
+
+Fitur yang tersedia meliputi:
+
+- Mengubah informasi profil
+- Mengubah password
+- Menghapus akun
+
+---
+
+## 🛠️ Teknologi yang Digunakan
+
+Project ini menggunakan beberapa teknologi berikut:
+
+| Teknologi | Penggunaan |
+|---|---|
+| Laravel | Framework utama aplikasi |
+| PHP | Bahasa pemrograman backend |
+| MySQL | Database |
+| Blade | Template engine |
+| Tailwind CSS | Styling tampilan |
+| Vite | Pengelolaan asset frontend |
+| JavaScript | Interaksi pada halaman web |
+| HTML | Struktur halaman |
+| CSS | Tampilan halaman |
+| Composer | Dependency management PHP |
+| npm | Dependency management frontend |
+
+---
+
+## 🏗️ Struktur Project
+
+Struktur utama project:
+
+```text
+SistemPencatatanBukuPerpustakaan/
+│
+├── app/
+│   ├── Http/
+│   ├── Mail/
+│   ├── Models/
+│   └── Providers/
+│
+├── bootstrap/
+│
+├── config/
+│
+├── database/
+│   ├── factories/
+│   ├── migrations/
+│   └── seeders/
+│
+├── public/
+│
+├── resources/
+│   ├── css/
+│   ├── js/
+│   └── views/
+│       ├── auth/
+│       ├── books/
+│       ├── borrowings/
+│       ├── components/
+│       ├── emails/
+│       ├── layouts/
+│       └── profile/
+│
+├── routes/
+│
+├── storage/
+│
+├── tests/
+│
+├── composer.json
+├── package.json
+├── phpunit.xml
+├── tailwind.config.js
+└── vite.config.js
