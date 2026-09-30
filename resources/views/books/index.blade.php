@@ -193,8 +193,8 @@
                                                     </a>
                                                 @else
                                                     <span class="px-4 py-2 bg-white/5 border border-white/10 text-slate-600 text-[10px] font-black uppercase tracking-widest rounded-xl cursor-not-allowed italic">
-                                                        Sold Out
-                                                    </span>
+    Stok Habis
+</span>
                                                 @endif
                                             @endif
                                         </div>
