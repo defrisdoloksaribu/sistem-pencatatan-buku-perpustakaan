@@ -52,8 +52,10 @@
                                 </div>
                             @endif
 
-                            <input type="file" name="cover_image" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
-                        </div>
+<input type="file"
+       name="cover_image"
+       accept=".jpg,.jpeg,.png"
+       class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">                        </div>
 
                         <div class="flex items-center justify-end mt-4">
                             <a href="{{ route('books.index') }}" class="text-gray-600 underline mr-4">Batal</a>
