@@ -525,3 +525,25 @@ Dokumentasi berupa screenshot aplikasi, diagram sistem, dan laporan project dapa
 📄 License
 
 Project ini dibuat untuk keperluan pembelajaran dan pengembangan project akademik.
+
+## Fitur Sistem
+
+- Login dan autentikasi pengguna
+- Dashboard informasi perpustakaan
+- Manajemen data buku
+- Pencarian buku
+- Penambahan dan pengeditan data buku
+- Pengelolaan stok buku
+- Peminjaman dan pengembalian buku
+- Persetujuan dan penolakan transaksi peminjaman
+- Scanner untuk proses peminjaman
+- Export data buku ke PDF
+
+## Teknologi
+
+- Laravel
+- PHP
+- MySQL
+- Blade
+- Tailwind CSS
+- Vite
